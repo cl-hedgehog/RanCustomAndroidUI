@@ -14,7 +14,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -242,10 +242,15 @@ public class DotProgress extends ViewGroup {
 
         public DotView(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
-            inflate(getContext(), R.layout.layout_dot_view, this);
-            this.textView = (TextView)findViewById(R.id.tv_dot);
-            this.imageView = (ImageView)findViewById(R.id.iv_dot);
-            this.line = (View)findViewById(R.id.vi_line);
+            // 这种方式和下面LayoutInflater的方式都可以
+//            inflate(getContext(), R.layout.layout_dot_view, this);
+//            this.textView = (TextView)findViewById(R.id.tv_dot);
+//            this.imageView = (ImageView)findViewById(R.id.iv_dot);
+//            this.line = (View)findViewById(R.id.vi_line);
+            View view = LayoutInflater.from(context).inflate(R.layout.layout_dot_view, this);
+            this.textView = (TextView)view.findViewById(R.id.tv_dot);
+            this.imageView = (ImageView)view.findViewById(R.id.iv_dot);
+            this.line = (View)view.findViewById(R.id.vi_line);
             setLastView(isLast);
             
         }
