@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dot_view"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" >
+
+    <ImageView
+        android:id="@+id/iv_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_completed"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_dot"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_completed"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@android:color/white" />
+    <View 
+        android:id="@+id/vi_line"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_toRightOf="@id/tv_dot"
+        android:layout_centerInParent="true"
+        android:background="#999"
+        />
+
+</RelativeLayout>

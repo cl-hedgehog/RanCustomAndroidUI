@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.demo.demomutiprogress"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <com.demo.demomutiprogress.NodeProgress
+        android:id="@+id/mp_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:currNodeNo="2"
+        app:currNodeState="1"
+        app:nodeRadius="10dp"
+        app:nodesNum="4"
+        app:processingLineColorBg="#7B68EE"
+        app:progresFailDrawable="@drawable/ic_error"
+        app:progresSuccDrawable="@drawable/ic_checked"
+        app:progressingDrawable="@drawable/ic_completed"
+        app:unprogressingDrawable="@drawable/ic_round_ddd" />
+
+    <com.demo.demomutiprogress.NodeProgress
+        android:id="@+id/mp_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/mp_1"
+        android:layout_marginTop="20dp"
+        app:currNodeNo="6"
+        app:currNodeState="1"
+        app:nodeRadius="6dp"
+        app:nodesNum="10"
+        app:processingLineColorBg="#7B68EE"
+        app:progresFailDrawable="@drawable/ic_error"
+        app:progresSuccDrawable="@drawable/ic_checked"
+        app:progressingDrawable="@drawable/ic_completed"
+        app:unprogressingDrawable="@drawable/ic_round_ddd" />
+
+    <com.demo.demomutiprogress.NodeProgress
+        android:id="@+id/mp_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/mp_2"
+        android:layout_marginTop="20dp"
+        app:currNodeNo="10"
+        app:currNodeState="0"
+        app:nodeRadius="4dp"
+        app:nodesNum="15"
+        app:processingLineColorBg="#FF00FF"
+        app:progresFailDrawable="@drawable/ic_error"
+        app:progresSuccDrawable="@drawable/ic_checked"
+        app:progressingDrawable="@drawable/ic_completed"
+        app:unprogressingDrawable="@drawable/ic_round_ddd" />
+
+    <com.demo.demomutiprogress.NodeProgress
+        android:id="@+id/mp_4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/mp_3"
+        app:currNodeNo="2"
+        app:nodeRadius="10dp"
+        app:nodesNum="5"
+        app:processingLineColorBg="#dddddd"
+        app:processingLineColorFg="#ffffff"
+        app:processingLineHeight="2dp"
+        app:progresFailDrawable="@drawable/ic_error"
+        app:progresSuccDrawable="@drawable/ic_checked"
+        app:progressingDrawable="@drawable/ic_completed"
+        app:unprogressingDrawable="@drawable/ic_round_ddd" />
+
+    <com.demo.demomutiprogress.DotProgress
+        android:id="@+id/mp_5"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/mp_4"
+        app:currentDotNo="2"
+        app:dotRadius="25dp"
+        app:dotsNum="5"
+        app:drawableInprogress="@drawable/ic_current"
+        app:drawableProgressed="@drawable/ic_completed"
+        app:drawableUnprogress="@drawable/ic_round_ddd"
+        app:lineColorProgressed="#ff0000"
+        app:lineColorUnprogress="#999"
+        app:textColorProgressed="#fff"
+        app:textColorUnprogress="#999" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="onPre"
+        android:text="pre" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="onNext"
+        android:text="next" />
+
+</RelativeLayout>

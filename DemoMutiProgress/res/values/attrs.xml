@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NodeProgress">
+        <attr name="nodesNum" format="integer" />
+ <!-- 节点数量 -->
+        <attr name="nodeRadius" format="dimension" />
+        <attr name="progressingDrawable" format="reference" />
+        <attr name="unprogressingDrawable" format="reference" />
+ <!-- 未完成的节点图标 -->
+        <attr name="progresFailDrawable" format="reference" />
+        <attr name="progresSuccDrawable" format="reference" />
+        <attr name="processingLineColorBg" format="color" />
+ <!-- 进度条的背景颜色未进行 -->
+        <attr name="processingLineColorFg" format="color" />
+        <attr name="processingLineHeight" format="dimension" />
+ <!-- 进度条的前景颜色已进行 -->
+        <attr name="currNodeNo" format="integer" />
+ <!-- 当前所到达的节点编号  0开始计算 -->
+        <attr name="currNodeState" format="integer" />
+ <!-- 当前所到达的节点状态，0：失败  1：成功 -->
+    </declare-styleable>
+     
+<declare-styleable name="DotProgress">
+        <attr name="dotsNum" format="integer" />
+        <attr name="dotRadius" format="dimension" />
+        <attr name="currentDotNo" format="integer" />
+        <attr name="lineColorUnprogress" format="color" />
+        <attr name="lineColorProgressed" format="color" />
+        <attr name="textColorUnprogress" format="color" />
+        <attr name="textColorProgressed" format="color" />
+        <attr name="drawableUnprogress" format="reference" />
+        <attr name="drawableInprogress" format="reference" />
+        <attr name="drawableProgressed" format="reference" />
+</declare-styleable>
+
+<declare-styleable name="overlay">
+     <!-- imageSize  图片size -->
+     <attr name="imageSize" format="dimension" />
+     <!-- imageSize  重叠width -->
+     <attr name="overlayWidth" format="dimension" />
+    </declare-styleable>
+</resources>
