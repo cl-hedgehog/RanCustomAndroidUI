@@ -1,3 +1,12 @@
+CustomFancyCoverFlow
+==============
+在Github的FancyCoverFlow项目基础上，增加了以下功能。
+1.水平时间滑动组件，显示三种日期：历史日期，未来日期，当前日期，其中当前日期背景特定。
+2.实现滑动阻断：只能滑动到当前日期，不可滑动到未来日期
+3.支持点击选中，历史日期除外。
+4.解决了滑动阻断和滑动过程每个项目均会经历选中状态的冲突。利用setCallbackDuringFling(false)则滑动阻断实现不了，才用线程睡眠时间间隔判断的方式
+原项目地址:https://github.com/davidschreiber/FancyCoverFlow
+
 FancyCoverFlow
 ==============
 
