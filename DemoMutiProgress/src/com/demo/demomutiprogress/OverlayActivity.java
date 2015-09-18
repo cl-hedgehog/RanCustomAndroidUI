@@ -40,13 +40,17 @@ public class OverlayActivity extends Activity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
+        // activity启动时得到焦点时才绘制，activity退出时失去焦点时不处理
+        if (hasFocus) {
         width = overlayLayout.getMeasuredWidth();
         widthHTH = overlayLayoutHTH.getMeasuredWidth();
         Log.d("HTH", "width= " + width);
         Log.d("HTH", "widthHTH= " + widthHTH);
         initData();
         overlayLayout.initOverlay(mImgList, width);
+        // 此处用屏幕宽度减去overlayLayout左右两端长度才最精确
         overlayLayoutHTH.initOverlay(mImgList, widthHTH);
+        }
     }
     
     /*
