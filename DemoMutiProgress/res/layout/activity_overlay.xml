@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.demo.demomutiprogress"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="16dp" >
 
     <com.demo.demomutiprogress.OverlayLayout
         android:id="@+id/overlay"
@@ -13,6 +13,43 @@
         android:layout_height="100dp"
         app:imageSize="40dp"
         app:overlayWidth="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:background="#aaa"
+        >
+
+        <TextView
+            android:id="@+id/tv_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="16dp"
+            android:text="23245次"
+            android:textSize="12dp" />
+        <ImageView 
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_more_right"
+            android:layout_centerVertical="true"/>
+        <com.demo.demomutiprogress.HTHOverlayLayout
+            android:id="@+id/hth_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/tv_times"
+            android:layout_toLeftOf="@id/iv_right"
+            app:imageSize="23dp"
+            app:overlayWidth="5dp" />
+
+    </RelativeLayout>
 
     <Button
         android:layout_width="match_parent"

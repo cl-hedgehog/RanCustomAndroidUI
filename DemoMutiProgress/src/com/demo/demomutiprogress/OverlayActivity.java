@@ -23,7 +23,9 @@ public class OverlayActivity extends Activity {
     
     Context mContext = OverlayActivity.this;
     OverlayLayout overlayLayout;
+    HTHOverlayLayout overlayLayoutHTH;
     int width;
+    int widthHTH;
     
     private List<Drawable> mImgList = new ArrayList<Drawable>();
     
@@ -32,30 +34,37 @@ public class OverlayActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overlay);
         overlayLayout = (OverlayLayout)findViewById(R.id.overlay);
+        overlayLayoutHTH = (HTHOverlayLayout)findViewById(R.id.hth_overlay);
     }
     
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         width = overlayLayout.getMeasuredWidth();
+        widthHTH = overlayLayoutHTH.getMeasuredWidth();
         Log.d("HTH", "width= " + width);
+        Log.d("HTH", "widthHTH= " + widthHTH);
         initData();
         overlayLayout.initOverlay(mImgList, width);
+        overlayLayoutHTH.initOverlay(mImgList, widthHTH);
     }
     
     /*
      *  实现水平图像重叠
      */
     public void onClick(View v){
-        if(mImgList.size()==4){
+        if(mImgList.size()==12){
             mImgList.add(getResources().getDrawable(R.drawable.ic_img_05));
             overlayLayout.updateOverlay(mImgList);
-        }else if(mImgList.size()==5){
+            overlayLayoutHTH.updateOverlay(mImgList);
+        }else if(mImgList.size()==13){
             mImgList.add(getResources().getDrawable(R.drawable.ic_img_06));
             overlayLayout.updateOverlay(mImgList);
-        }else if(mImgList.size()==6){
+            overlayLayoutHTH.updateOverlay(mImgList);
+        }else if(mImgList.size()==14){
             mImgList.add(getResources().getDrawable(R.drawable.ic_img_07));
             overlayLayout.updateOverlay(mImgList);
+            overlayLayoutHTH.updateOverlay(mImgList);
         }else{
             Toast.makeText(mContext, "No More Image", Toast.LENGTH_SHORT).show();
         }
@@ -63,6 +72,14 @@ public class OverlayActivity extends Activity {
     }
     
     private void initData(){
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_01));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_02));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_03));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_04));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_01));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_02));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_03));
+        mImgList.add(getResources().getDrawable(R.drawable.ic_img_04));
         mImgList.add(getResources().getDrawable(R.drawable.ic_img_01));
         mImgList.add(getResources().getDrawable(R.drawable.ic_img_02));
         mImgList.add(getResources().getDrawable(R.drawable.ic_img_03));
